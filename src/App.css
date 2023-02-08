@@ -82,3 +82,25 @@ header {
 .home img {
   height: 300px;
 }
+.listOfOffers {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 250px;
+}
+
+.product {
+  display: flex;
+  color: grey;
+  justify-content: center;
+  /* background-color: pink; */
+  height: 500px;
+  width: 350px;
+  /* border: 1px #2db0ba solid; */
+}
+.product img {
+  height: 400px;
+  width: 250px;
+  margin-top: 20px;
+}

@@ -15,13 +15,15 @@ function App() {
   const [offer, setOffer] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  // const handleSubmit =
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        setOffer(response.offer);
+        setOffer(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -30,10 +32,6 @@ function App() {
     fetchData();
   }, []);
 
-  // const handleToOffer =(elem) => {
-  //   const offerCopy =[...offer];
-  // }
-
   return (
     <div className="App">
       <Router>
@@ -41,11 +39,9 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={
-              <Home offer={offer} isLoading={isLoading} offers={offer.offers} />
-            }
+            element={<Home offer={offer} isLoading={isLoading} />}
           ></Route>
-          <Route path="/offer" element={<Offer />}></Route>
+          <Route path="/offer/:id" element={<Offer />}></Route>
         </Routes>
       </Router>
     </div>

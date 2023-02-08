@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// import Offers from "../Components/Offers";
 
 const Home = ({ offer, isLoading }) => {
   return (
@@ -8,7 +9,6 @@ const Home = ({ offer, isLoading }) => {
       ) : (
         <div>
           <h1>je suis sur la page Home</h1>
-          <Link to="/offer/">Vers la page Offer</Link>
 
           <div className="homeBox">
             <div className="homeP">
@@ -20,15 +20,17 @@ const Home = ({ offer, isLoading }) => {
           </div>
 
           <div className="listOfOffers">
-            {offer.offers.map((elem, index) => {
+            {offer.offers.map((elem) => {
               return (
-                <div key={index}>
-                  <div>
-                    {elem.map((item, num) => {
-                      return <div key={num}>{item.offers}</div>;
-                    })}
+                //lien vers la page Offer avec l'offre dont l'id est indiquée
+                <Link to={`/offer/${offer._id}`}>
+                  <div key={offer._id} className="product">
+                    <div>
+                      <p>{elem.owner.account.username}</p>
+                      <img src={elem.product_image.url} alt="" />
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

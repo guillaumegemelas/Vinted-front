@@ -1,4 +1,6 @@
-const Offers = (props) => {
+// import { Link } from "react-router-dom";
+
+const Offers = (elem) => {
   return <div></div>;
 };
 

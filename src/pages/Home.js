@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Home = ({ offer }) => {
+const Home = ({ offer, offers }) => {
   return (
     <div className="home">
       <h1>je suis sur la page Home</h1>
@@ -19,7 +19,11 @@ const Home = ({ offer }) => {
         {offer.offers.map((elem, index) => {
           return (
             <div key={index}>
-              <p>{elem.offers}</p>
+              <div>
+                {offers.product_name.map((item, num) => {
+                  return <div key={num}>{item.offers}</div>;
+                })}
+              </div>
             </div>
           );
         })}

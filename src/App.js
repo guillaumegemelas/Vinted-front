@@ -21,7 +21,7 @@ function App() {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        setOffer(response.data);
+        setOffer(response.offer);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -39,7 +39,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home offer={offer} />}></Route>
           <Route path="/offer" element={<Offer />}></Route>
         </Routes>
       </Router>

@@ -7,9 +7,7 @@ const Home = ({ offer, isLoading }) => {
       {isLoading ? (
         <p>En cours de chargement...</p>
       ) : (
-        <div>
-          <h1>je suis sur la page Home</h1>
-
+        <div className="container">
           <div className="homeBox">
             <div className="homeP">
               <p>Prêts à faire du tri dans vos placards?</p>
@@ -20,11 +18,12 @@ const Home = ({ offer, isLoading }) => {
           </div>
 
           <div className="listOfOffers">
-            {offer.offers.map((elem) => {
+            {offer.offers.map((elem, index) => {
               return (
                 //lien vers la page Offer avec l'offre dont l'id est indiquée
-                <Link to={`/offer/${offer._id}`}>
-                  <div key={offer._id} className="product">
+                <Link to={`/offer/${elem._id}`} key={index}>
+                  {/* {console.log(elem._id)} */}
+                  <div key={elem._id} className="product">
                     <div>
                       <p>{elem.owner.account.username}</p>
                       <img src={elem.product_image.url} alt="" />
@@ -36,7 +35,6 @@ const Home = ({ offer, isLoading }) => {
           </div>
         </div>
       )}
-      ;
     </div>
   );
 };

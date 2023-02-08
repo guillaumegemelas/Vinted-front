@@ -46,11 +46,13 @@ header {
 /* Home -----------------------------------------*/
 
 .home {
+  display: flex;
   /* background-color: rgb(217, 188, 115); */
   background-image: url(./img/home.jpg);
   height: 600px;
   width: 100%vw;
 }
+
 .homeBox {
   display: flex;
   flex-direction: column;
@@ -103,4 +105,5 @@ header {
   height: 400px;
   width: 250px;
   margin-top: 20px;
+  object-fit: cover;
 }

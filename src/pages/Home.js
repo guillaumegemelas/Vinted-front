@@ -46,12 +46,15 @@ const Home = () => {
                   <article key={elem._id} className="product">
                     <div className="avatar">
                       {elem.owner.account.avatar && (
-                        <img src={elem.owner.account.avatar.url} alt="" />
+                        <img
+                          src={elem.owner.account.avatar.secure_url}
+                          alt=""
+                        />
                       )}
                       <p>{elem.owner.account.username}</p>
                     </div>
                     <div>
-                      <img src={elem.product_image.url} alt="" />
+                      <img src={elem.product_image.secure_url} alt="" />
                     </div>
                     <div className="above">
                       <p>{elem.product_price}€</p>

@@ -40,19 +40,35 @@ const Offer = () => {
             <div className="offerPicture">
               <img src={offer.product_image.secure_url} alt="" />
             </div>
+
             <div className="offerDescription">
+              <div className="price">
+                <p>{offer.product_price}€</p>
+              </div>
+
               {offer.product_details.map((detail, index) => {
                 const key = Object.keys(detail)[0];
                 // console.log(detail[key]);
                 return (
                   <div className="text" key={index}>
-                    <span>{key}:</span>
-                    <span>{detail[key]}</span>
+                    <div className="key">
+                      <p>{key}:</p>
+                    </div>
+                    <div className="key1">
+                      <p>{detail[key]}</p>
+                    </div>
                   </div>
                 );
               })}
-              <p>{offer.product_price}€</p>
-              <p>{offer.product_name}</p>
+              <div className="straigth"></div>
+              <div className="nameAndBuy">
+                <div>
+                  <p>{offer.product_name}</p>
+                </div>
+                <div>
+                  <button className="buy">Acheter</button>
+                </div>
+              </div>
             </div>
           </div>
         )}

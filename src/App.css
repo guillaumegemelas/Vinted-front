@@ -21,6 +21,21 @@ header {
   height: auto;
   width: 50%;
 }
+.search input {
+  width: 480px;
+  height: 35px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 15px;
+  color: rgb(177, 172, 172);
+  border: none;
+}
+::placeholder {
+  color: rgb(181, 179, 179);
+  font-size: 15px;
+}
+
 .but0 {
   height: 37px;
   width: 140px;
@@ -116,12 +131,14 @@ header {
   height: 500px;
   width: 300px;
   /* border: 1px #2db0ba solid; */
+  margin-bottom: 25px;
 }
 .product img {
-  height: 400px;
-  width: 250px;
+  height: 420px;
+  width: 280px;
   margin-top: 20px;
   object-fit: cover;
+  box-shadow: 1px 1px 15px rgb(190, 188, 188);
 }
 
 .avatar {
@@ -139,6 +156,9 @@ header {
   border-radius: 50%;
   margin-bottom: 15px;
 }
+.above {
+  margin-top: 10px;
+}
 /* page offer------------------------------------------------------------ */
 
 .response {
@@ -148,7 +168,6 @@ header {
 .offerGlobal {
   display: flex;
   max-width: 80%;
-
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
@@ -161,7 +180,10 @@ header {
   justify-content: center;
   align-items: center;
   height: 700px;
+  width: 500px;
+  object-fit: cover;
   margin-top: 40px;
+  box-shadow: 1px 1px 15px rgb(190, 188, 188);
 }
 
 .offerDescription {
@@ -171,13 +193,54 @@ header {
   width: 40%;
   height: 700px;
   margin-top: 40px;
+  box-shadow: 1px 1px 15px rgb(190, 188, 188);
 }
-.text,
+.straigth {
+  border-bottom: 1px rgb(186, 185, 185) solid;
+  width: 70%;
+  margin-left: 12%;
+  margin-top: 65px;
+  margin-bottom: 45px;
+}
+.price {
+  display: flex;
+  /* background-color: pink; */
+  font-size: 27px;
+  margin-left: 50px;
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
 .offerDescription p {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
   padding: 30px 0 0 30px;
+}
+.text {
+  display: flex;
+  padding: 10px 0 0 35px;
+}
+
+.key {
+  color: rgb(186, 185, 185);
+  width: 30%;
+}
+
+.nameAndBuy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  justify-content: space-between;
+  /* background-color: pink; */
+}
+.buy {
+  height: 42px;
+  width: 350px;
+  color: #fff;
+  font-size: 18px;
+  background-color: #2db0ba;
+  border: 1px #2db0ba solid;
+  border-radius: 5px;
 }
 
 /* page login------------------------------------------------------------ */

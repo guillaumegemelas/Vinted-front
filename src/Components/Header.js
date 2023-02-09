@@ -9,6 +9,10 @@ const Header = () => {
       <div className="logo">
         <img src={logo} alt="" />
       </div>
+
+      <div className="search">
+        <input type="text" placeholder="🔍   Recherche des articles" />
+      </div>
       <div className="buttons">
         {/* il faut que ce bouton soit visible que sur la page home */}
 

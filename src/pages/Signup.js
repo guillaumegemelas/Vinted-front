@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import axios from "axios";
 
 const Signup = () => {
   //mes states dédiées au contenu de mes inputs
@@ -8,6 +10,23 @@ const Signup = () => {
 
   const [submit, setSubmit] = useState(true);
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          name: name,
+          email: email,
+          password: password,
+        }
+      );
+      setSubmit(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message, "erreur 🤕");
+    }
+  };
+
   return (
     <div className="globLogin">
       <div className="souLogin">
@@ -15,6 +34,7 @@ const Signup = () => {
           className="form"
           onSubmit={(event) => {
             event.preventDefault();
+            fetchData();
           }}
         >
           <h1>S'inscrire</h1>

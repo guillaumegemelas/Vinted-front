@@ -21,7 +21,7 @@ const Login = () => {
 
       console.log(response.data);
       //   création du cookie qui stockera le token
-      Cookies.set("tokenLog", response.data.token, { expires: 10 });
+      Cookies.set("token", response.data.token, { expires: 10 });
       //   Cookies.set("tokenLog", response.data.account.username, { expires: 10 });
     } catch (error) {
       console.log(error.response, "erreur login 🤕");

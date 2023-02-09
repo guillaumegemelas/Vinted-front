@@ -23,7 +23,7 @@ const Signup = () => {
       );
       console.log(response.data);
       //   création du cookie qui stockera le token
-      Cookies.set("tokenSign", response.data.token);
+      Cookies.set("token", response.data.token, { expires: 10 });
     } catch (error) {
       console.log(error.response, "erreur signup 🤕");
     }

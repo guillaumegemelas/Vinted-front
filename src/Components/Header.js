@@ -15,7 +15,7 @@ const Header = () => {
         <button
           className="but0"
           onClick={() => {
-            Cookies.remove("tokenLog");
+            Cookies.remove("token");
             navigate("/");
           }}
         >

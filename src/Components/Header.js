@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../img/logo.svg";
 
 const Header = () => {
@@ -7,9 +8,15 @@ const Header = () => {
         <img src={logo} alt="" />
       </div>
       <div className="buttons">
-        <button className="but1">S'inscrire</button>
-        <button className="but2">Se connecter</button>
-        <button className="but3">Vends tes articles</button>
+        <Link to="/signup">
+          <button className="but1">S'inscrire</button>
+        </Link>
+        <Link to="/login">
+          <button className="but2">Se connecter</button>
+        </Link>
+        <Link to="/">
+          <button className="but3">Vends tes articles</button>
+        </Link>
       </div>
     </header>
   );

@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -8,22 +10,25 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [submit, setSubmit] = useState(true);
+  const [submit, setSubmit] = useState();
 
   const fetchData = async () => {
     try {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
-          name: name,
           email: email,
+          username: name,
           password: password,
+          newsletter: true,
         }
       );
       setSubmit(response.data);
       console.log(response.data);
+      //   création du cookie qui stockera le token
+      Cookies.set("token", response.data.account.token);
     } catch (error) {
-      console.log(error.message, "erreur 🤕");
+      console.log(error.response, "erreur signup 🤕");
     }
   };
 
@@ -75,6 +80,9 @@ const Signup = () => {
           <button className="inscripButton" type="submit">
             S'inscrire
           </button>
+          <Link to="/login">
+            <p className="z">Tu as déjà un compte, connecte toi</p>
+          </Link>
         </form>
       </div>
     </div>

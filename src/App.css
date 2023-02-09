@@ -182,10 +182,16 @@ header {
 }
 
 .souLogin {
-  height: 600px;
+  height: 700px;
   width: 400px;
   /* background-color: pink; */
   margin-bottom: 100px;
+}
+.souLogin1 {
+  height: 390px;
+  width: 400px;
+  /* background-color: pink; */
+  margin-bottom: 400px;
 }
 
 .form {
@@ -197,7 +203,8 @@ header {
   margin-top: 100px;
   /* background-color: yellowgreen; */
 }
-.souLogin h1 {
+.souLogin h1,
+.souLogin1 h1 {
   font-size: 25px;
 }
 .form input {
@@ -238,4 +245,10 @@ header {
   background-color: #2db0ba;
   border: 1px #2db0ba solid;
   border-radius: 5px;
+}
+.z {
+  color: #2db0ba;
+}
+a {
+  text-decoration: none;
 }

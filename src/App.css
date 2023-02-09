@@ -90,15 +90,21 @@ header {
   margin: 0 auto;
   width: 90%;
   margin-top: 250px;
+  /* background-color: pink; */
+}
+.avatar p {
+  text-decoration: none;
+  color: rgb(147, 145, 145);
 }
 
 .product {
   display: flex;
   color: grey;
+  flex-direction: column;
   justify-content: center;
-  /* background-color: pink; */
+  /* background-color: red; */
   height: 500px;
-  width: 350px;
+  width: 300px;
   /* border: 1px #2db0ba solid; */
 }
 .product img {
@@ -106,4 +112,60 @@ header {
   width: 250px;
   margin-top: 20px;
   object-fit: cover;
+}
+
+.avatar {
+  display: flex;
+  height: 30px;
+  /* background-color: pink; */
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.avatar img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+/* page offer------------------------------------------------------------ */
+
+.response {
+  background-color: rgb(226, 223, 223);
+  height: 880px;
+}
+.offerGlobal {
+  display: flex;
+  max-width: 80%;
+
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: pink; */
+}
+
+.offerPicture img {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  margin-top: 40px;
+}
+
+.offerDescription {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  width: 40%;
+  height: 700px;
+  margin-top: 40px;
+}
+.text,
+.offerDescription p {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 30px 0 0 30px;
 }

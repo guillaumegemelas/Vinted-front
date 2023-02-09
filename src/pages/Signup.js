@@ -10,8 +10,6 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [submit, setSubmit] = useState();
-
   const fetchData = async () => {
     try {
       const response = await axios.post(
@@ -23,10 +21,9 @@ const Signup = () => {
           newsletter: true,
         }
       );
-      setSubmit(response.data);
       console.log(response.data);
       //   création du cookie qui stockera le token
-      Cookies.set("token", response.data.account.token);
+      Cookies.set("tokenSign", response.data.token);
     } catch (error) {
       console.log(error.response, "erreur signup 🤕");
     }

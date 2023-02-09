@@ -9,8 +9,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [submit, setSubmit] = useState(true);
-
   const fetchData = async () => {
     try {
       const response = await axios.post(
@@ -20,10 +18,11 @@ const Login = () => {
           password: password,
         }
       );
-      setSubmit(response.data);
+
       console.log(response.data);
       //   création du cookie qui stockera le token
-      Cookies.set("tokenLog", response.data.account.token);
+      Cookies.set("tokenLog", response.data.token, { expires: 10 });
+      //   Cookies.set("tokenLog", response.data.account.username, { expires: 10 });
     } catch (error) {
       console.log(error.response, "erreur login 🤕");
     }

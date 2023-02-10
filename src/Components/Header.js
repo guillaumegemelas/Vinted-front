@@ -1,7 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../img/logo.svg";
 
-const Header = ({ handleToken, token, search, setSearch }) => {
+const Header = ({
+  handleToken,
+  token,
+  search,
+  setSearch,
+  searchMin,
+  setSearchMin,
+}) => {
   const navigate = useNavigate();
 
   return (
@@ -16,6 +23,15 @@ const Header = ({ handleToken, token, search, setSearch }) => {
           value={search}
           placeholder="🔍   Recherche des articles"
           onChange={(event) => setSearch(event.target.value)}
+        />
+      </div>
+      {/* test */}
+      <div>
+        <input
+          type="number"
+          value={searchMin}
+          placeholder="Min"
+          onChange={(event) => setSearchMin(event.target.value)}
         />
       </div>
       <div className="buttons">

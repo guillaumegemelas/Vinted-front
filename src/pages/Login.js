@@ -1,15 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
+// import Cookies from "js-cookie";
+import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ handleToken }) => {
   //mes states dédiées au contenu de mes inputs
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const fetchData = async () => {
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
     try {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/login",
@@ -21,10 +23,13 @@ const Login = () => {
 
       console.log(response.data);
       //   création du cookie qui stockera le token
-      Cookies.set("token", response.data.token, { expires: 10 });
+      if (response.data.token) {
+        handleToken(response.data.token);
+        navigate("/");
+      }
       //   Cookies.set("tokenLog", response.data.account.username, { expires: 10 });
     } catch (error) {
-      console.log(error.response, "erreur login 🤕");
+      console.log(error.response.data, "erreur login 🤕");
     }
   };
 
@@ -35,7 +40,7 @@ const Login = () => {
           className="form"
           onSubmit={(event) => {
             event.preventDefault();
-            fetchData();
+            handleLogin();
           }}
         >
           <h1>Se connecter</h1>

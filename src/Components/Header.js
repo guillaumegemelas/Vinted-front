@@ -1,28 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../img/logo.svg";
-import { useState, useEffect } from "react";
-import axios from "axios";
 
-const Header = ({ handleToken, token }) => {
+const Header = ({ handleToken, token, search, setSearch }) => {
   const navigate = useNavigate();
-
-  const [search, setSearch] = useState("");
-  // const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
-        );
-
-        // setIsLoading(false);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    fetchData();
-  });
 
   return (
     <header>

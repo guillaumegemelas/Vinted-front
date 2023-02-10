@@ -14,6 +14,7 @@ import Header from "./Components/Header";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
+  const [search, setSearch] = useState("");
 
   const handleToken = (token) => {
     if (token) {
@@ -28,7 +29,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header handleToken={handleToken} token={token} />
+        <Header
+          handleToken={handleToken}
+          token={token}
+          search={search}
+          setSearch={setSearch}
+        />
         <Routes>
           <Route
             path="/signup"
@@ -38,7 +44,7 @@ function App() {
             path="/login"
             element={<Login handleToken={handleToken} />}
           ></Route>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home search={search} />}></Route>
           <Route path="/offer/:id" element={<Offer />}></Route>
         </Routes>
       </Router>

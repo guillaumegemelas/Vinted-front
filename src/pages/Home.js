@@ -6,7 +6,7 @@ const Home = () => {
   const [offer, setOffer] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect((search) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -14,6 +14,8 @@ const Home = () => {
         );
         setOffer(response.data);
         setIsLoading(false);
+
+        console.log(response.data);
       } catch (error) {
         console.log(error.message);
       }

@@ -9,6 +9,8 @@ const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -30,6 +32,12 @@ const Login = ({ handleToken }) => {
       //   Cookies.set("tokenLog", response.data.account.username, { expires: 10 });
     } catch (error) {
       console.log(error.response.data, "erreur login 🤕");
+      if (error.response.data.message === "User not found") {
+        setErrorMessage("Aucun email ne correspond à un compte valide");
+      }
+      if (error.response.data.error === "Unauthorized") {
+        setErrorMessage("Mot de passe incorrect");
+      }
     }
   };
 
@@ -63,6 +71,8 @@ const Login = ({ handleToken }) => {
           <button className="inscripButton" type="submit">
             Se connecter
           </button>
+
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
           <Link to="/signup">
             <p className="z">Pas encore de compte? inscris-toi</p>
           </Link>

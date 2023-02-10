@@ -8,6 +8,8 @@ const Header = ({
   setSearch,
   searchMin,
   setSearchMin,
+  searchMax,
+  setSearchMax,
 }) => {
   const navigate = useNavigate();
 
@@ -17,23 +19,32 @@ const Header = ({
         <img src={logo} alt="" />
       </div>
 
-      <div className="search">
-        <input
-          type="text"
-          value={search}
-          placeholder="🔍   Recherche des articles"
-          onChange={(event) => setSearch(event.target.value)}
-        />
+      <div className="trioButtons">
+        <div className="search">
+          <input
+            type="text"
+            value={search}
+            placeholder="🔍   Recherche des articles"
+            onChange={(event) => setSearch(event.target.value)}
+          />
+        </div>
+
+        <div className="priceSelect">
+          <input
+            type="number"
+            value={searchMin}
+            placeholder="Min"
+            onChange={(event) => setSearchMin(event.target.value)}
+          />
+          <input
+            type="number"
+            value={searchMax}
+            placeholder="Max"
+            onChange={(event) => setSearchMax(event.target.value)}
+          />
+        </div>
       </div>
-      {/* test */}
-      <div>
-        <input
-          type="number"
-          value={searchMin}
-          placeholder="Min"
-          onChange={(event) => setSearchMin(event.target.value)}
-        />
-      </div>
+
       <div className="buttons">
         {/* il faut que ce bouton soit visible que sur la page home */}
         {token ? (

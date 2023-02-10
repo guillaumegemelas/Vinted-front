@@ -42,7 +42,7 @@ const Login = ({ handleToken }) => {
   };
 
   return (
-    <div className="globLogin">
+    <div className="globLogin1">
       <div className="souLogin1">
         <form
           className="form"

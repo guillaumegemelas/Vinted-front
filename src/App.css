@@ -9,7 +9,7 @@ header {
   /* background-color: pink; */
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 130px;
   width: 90vw;
   margin: 0 auto;
 }
@@ -35,7 +35,21 @@ header {
   color: rgb(181, 179, 179);
   font-size: 15px;
 }
-
+.priceSelect {
+  display: flex;
+  justify-content: space-around;
+  width: 170px;
+  height: 35px;
+  /* background-color: pink; */
+}
+.priceSelect input {
+  width: 60px;
+  color: #2db0ba;
+  border: 1px #2db0ba solid;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding-left: 8px;
+}
 .but0 {
   height: 37px;
   width: 140px;
@@ -265,9 +279,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   /* background-color: yellowgreen; */
+}
+.globLogin1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77vh;
+  width: 100vw;
 }
 
 .souLogin {

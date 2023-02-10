@@ -16,6 +16,7 @@ function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [search, setSearch] = useState("");
   const [searchMin, setSearchMin] = useState(0);
+  const [searchMax, setSearchMax] = useState(1000);
 
   const handleToken = (token) => {
     if (token) {
@@ -37,6 +38,8 @@ function App() {
           setSearch={setSearch}
           searchMin={searchMin}
           setSearchMin={setSearchMin}
+          searchMax={searchMax}
+          setSearchMax={setSearchMax}
         />
         <Routes>
           <Route
@@ -49,7 +52,13 @@ function App() {
           ></Route>
           <Route
             path="/"
-            element={<Home search={search} searchMin={searchMin} />}
+            element={
+              <Home
+                search={search}
+                searchMin={searchMin}
+                searchMax={searchMax}
+              />
+            }
           ></Route>
           <Route path="/offer/:id" element={<Offer />}></Route>
         </Routes>

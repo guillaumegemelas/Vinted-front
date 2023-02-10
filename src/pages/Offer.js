@@ -69,11 +69,15 @@ const Offer = () => {
                   <button className="buy">Acheter</button>
                 </div>
               </div>
+              <div className="icon">
+                <Link to="/">
+                  <p style={{ fontSize: "25px", color: "lightgray" }}>↩</p>{" "}
+                </Link>
+              </div>
             </div>
           </div>
         )}
       </div>
-      <Link to="/">retour vers la page Home</Link>
     </div>
   );
 };

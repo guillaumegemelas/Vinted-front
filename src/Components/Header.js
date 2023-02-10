@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../img/logo.svg";
 
 const Header = ({
   handleToken,
@@ -16,7 +15,10 @@ const Header = ({
   return (
     <header>
       <div className="logo">
-        <img src={logo} alt="" />
+        <img
+          src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
+          alt=""
+        />
       </div>
 
       <div className="trioButtons">

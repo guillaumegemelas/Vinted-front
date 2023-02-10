@@ -14,6 +14,10 @@ header {
   margin: 0 auto;
 }
 
+header img {
+  width: 140px;
+}
+
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -252,6 +256,12 @@ header {
 .key {
   color: rgb(186, 185, 185);
   width: 30%;
+}
+.icon {
+  display: flex;
+  width: 95%;
+  /* background-coslor: pink; */
+  justify-content: flex-end;
 }
 
 .nameAndBuy {

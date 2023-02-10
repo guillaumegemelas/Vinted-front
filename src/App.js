@@ -15,7 +15,7 @@ import Header from "./Components/Header";
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [search, setSearch] = useState("");
-  const [searchMin, setSearchMin] = useState();
+  const [searchMin, setSearchMin] = useState(0);
 
   const handleToken = (token) => {
     if (token) {
@@ -47,7 +47,10 @@ function App() {
             path="/login"
             element={<Login handleToken={handleToken} />}
           ></Route>
-          <Route path="/" element={<Home search={search} />}></Route>
+          <Route
+            path="/"
+            element={<Home search={search} searchMin={searchMin} />}
+          ></Route>
           <Route path="/offer/:id" element={<Offer />}></Route>
         </Routes>
       </Router>

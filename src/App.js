@@ -15,7 +15,7 @@ import Header from "./Components/Header";
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [search, setSearch] = useState("");
-  const [searchMin, setSearchMin] = useState("");
+  const [searchMin, setSearchMin] = useState();
 
   const handleToken = (token) => {
     if (token) {

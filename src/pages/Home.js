@@ -18,6 +18,7 @@ const Home = ({ search, searchMin }) => {
         console.log(response.data);
       } catch (error) {
         console.log(error.message);
+        console.log(error.response);
       }
     };
     fetchData();

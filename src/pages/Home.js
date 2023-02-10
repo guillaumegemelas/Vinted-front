@@ -35,6 +35,14 @@ const Home = () => {
             </div>
           </div>
 
+          {/* image déchitée pas top, à virer si pose problème */}
+          <div className="heroImg">
+            <img
+              src="https://lereacteur-vinted.netlify.app/static/media/tear.884480420945b3afd77b44a6c5f98567.svg"
+              alt=""
+            />
+          </div>
+
           <div className="listOfOffers">
             {/* Mettre filteredOffers à la place si requete depuis vinted back Northflank */}
             {offer.offers.map((elem, index) => {

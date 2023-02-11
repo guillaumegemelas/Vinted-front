@@ -18,7 +18,7 @@ function App() {
   const [searchMin, setSearchMin] = useState(0);
   const [searchMax, setSearchMax] = useState(1000);
   const [switch1, setSwitch1] = useState(false);
-  const [price, setPrice] = useState("price-asc");
+  const [price, setPrice] = useState("");
 
   const handleToken = (token) => {
     if (token) {
@@ -45,6 +45,7 @@ function App() {
           switch1={switch1}
           setSwitch1={setSwitch1}
           setPrice={setPrice}
+          price={price}
         />
         <Routes>
           <Route

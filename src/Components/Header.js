@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Switch from "react-switch";
+// import Switch from "react-switch";
 
 const Header = ({
   handleToken,
@@ -51,16 +51,24 @@ const Header = ({
           </div>
           {/* modifs ajout switch */}
           <div className="sortOf">
-            <span style={{ fontSize: "14px" }}>Trier par prix:</span>
+            <span style={{ fontSize: "14px", color: "lightgray" }}>
+              Trier par prix:
+            </span>
             <div
+              className="asc"
               onClick={() => {
-                setSwitch1(false);
-                if ({ switch1 } === true) {
-                  setPrice("price-asc");
-                } else setPrice("price-desc");
+                setPrice("price-desc");
               }}
             >
-              <Switch />
+              <button style={{ fontSize: "15px" }}>-</button>
+            </div>
+            <div
+              className="asc"
+              onClick={() => {
+                setPrice("price-asc");
+              }}
+            >
+              <button style={{ fontSize: "15px" }}>+</button>
             </div>
           </div>
         </div>

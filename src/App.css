@@ -89,16 +89,32 @@ header img {
   margin-left: 60px;
 }
 
+.sortOf {
+  display: flex;
+  height: 30px;
+  width: 200px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  /* background-color: pink; */
+  margin-top: 5px;
+}
+
+.asc button {
+  border: 1px #2db0ba solid;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #2db0ba;
+}
+
 /* Home -----------------------------------------*/
 
 .home {
   display: flex;
-  /* background-color: rgb(217, 188, 115); */
-  /* problème pour dimensionner le background si on passe sur un écran plus grand*/
   background-image: url(https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg);
-  background-size: 100% 160%;
+  background-position: center;
+  background-size: cover;
   height: 600px;
-  width: 100vw;
 }
 
 .homeBox {

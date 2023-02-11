@@ -98,7 +98,7 @@ header img {
   background-image: url(https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg);
   background-size: 100% 160%;
   height: 600px;
-  width: 100%vw;
+  width: 100vw;
 }
 
 .homeBox {

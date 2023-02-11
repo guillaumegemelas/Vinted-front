@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Home = ({ search, searchMin, searchMax }) => {
+const Home = ({ search, searchMin, searchMax, price }) => {
   const [offer, setOffer] = useState();
   const [isLoading, setIsLoading] = useState(true);
   // console.log(search);
@@ -11,7 +11,7 @@ const Home = ({ search, searchMin, searchMax }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${searchMin}&priceMax=${searchMax}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${searchMin}&priceMax=${searchMax}&sort=${price}`
         );
         setOffer(response.data);
         setIsLoading(false);
@@ -23,7 +23,7 @@ const Home = ({ search, searchMin, searchMax }) => {
       }
     };
     fetchData();
-  }, [search, searchMin, searchMax]);
+  }, [search, searchMin, searchMax, price]);
   return (
     <div className="home">
       {isLoading ? (

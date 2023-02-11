@@ -42,6 +42,9 @@ function App() {
           setSearchMin={setSearchMin}
           searchMax={searchMax}
           setSearchMax={setSearchMax}
+          switch1={switch1}
+          setSwitch1={setSwitch1}
+          setPrice={setPrice}
         />
         <Routes>
           <Route
@@ -59,6 +62,7 @@ function App() {
                 search={search}
                 searchMin={searchMin}
                 searchMax={searchMax}
+                price={price}
               />
             }
           ></Route>

@@ -102,9 +102,11 @@ header img {
 
 .asc button {
   border: 1px #2db0ba solid;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #2db0ba;
+  height: 25px;
+  width: 25px;
+  border-radius: 60%;
+  background-color: #2db0ba;
+  color: #fff;
 }
 
 /* Home -----------------------------------------*/

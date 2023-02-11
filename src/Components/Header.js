@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+// import Switch from "react-switch";
 
 const Header = ({
   handleToken,
@@ -30,20 +31,35 @@ const Header = ({
             onChange={(event) => setSearch(event.target.value)}
           />
         </div>
-
-        <div className="priceSelect">
-          <input
-            type="number"
-            value={searchMin}
-            placeholder="Min"
-            onChange={(event) => setSearchMin(event.target.value)}
-          />
-          <input
-            type="number"
-            value={searchMax}
-            placeholder="Max"
-            onChange={(event) => setSearchMax(event.target.value)}
-          />
+        <div className="buttonsFourth">
+          <div className="priceSelect">
+            <input
+              type="number"
+              value={searchMin}
+              placeholder="Min"
+              onChange={(event) => setSearchMin(event.target.value)}
+            />
+            <input
+              type="number"
+              value={searchMax}
+              placeholder="Max"
+              onChange={(event) => setSearchMax(event.target.value)}
+            />
+          </div>
+          {/* modifs ajout switch */}
+          <div className="sortOf">
+            <span style={{ fontSize: "14px" }}>Trier par prix:</span>
+            <div
+              onClick={() => {
+                setSwitch1(true);
+                if ({ switch1 } === true) {
+                  setPrice("price-desc");
+                } else setPrice("price-asc");
+              }}
+            >
+              <Switch />
+            </div>
+          </div>
         </div>
       </div>
 

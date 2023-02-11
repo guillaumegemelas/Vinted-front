@@ -17,6 +17,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [searchMin, setSearchMin] = useState(0);
   const [searchMax, setSearchMax] = useState(1000);
+  const [switch1, setSwitch1] = useState(false);
+  const [price, setPrice] = useState("price-asc");
 
   const handleToken = (token) => {
     if (token) {

@@ -25,26 +25,29 @@ const Home = ({ search, searchMin, searchMax, price }) => {
     fetchData();
   }, [search, searchMin, searchMax, price]);
   return (
+    // le découpage n'est pas optimal: home regroupe la page alors qu'il faudrait
+    // une div pour la partie haute et une autre pour l'afficahge des annonces
+    // il faut faire un plan écrit avant de se lancer dans le css
     <div className="home">
       {isLoading ? (
         <p>En cours de chargement...</p>
       ) : (
         <div className="container">
-          <div className="homeBox">
-            <div className="homeP">
-              <p>Prêts à faire du tri dans vos placards?</p>
+          <div>
+            <div className="homeBox">
+              <div className="homeP">
+                <p>Prêts à faire du tri dans vos placards?</p>
+              </div>
+              <div>
+                <button className="homeBut">Commencez à vendre</button>
+              </div>
             </div>
-            <div>
-              <button className="homeBut">Commencez à vendre</button>
+            <div className="heroImg">
+              <img
+                src="https://lereacteur-vinted.netlify.app/static/media/tear.884480420945b3afd77b44a6c5f98567.svg"
+                alt=""
+              />
             </div>
-          </div>
-
-          {/* image déchitée pas top, à virer si pose problème */}
-          <div className="heroImg">
-            <img
-              src="https://lereacteur-vinted.netlify.app/static/media/tear.884480420945b3afd77b44a6c5f98567.svg"
-              alt=""
-            />
           </div>
 
           <div className="listOfOffers">

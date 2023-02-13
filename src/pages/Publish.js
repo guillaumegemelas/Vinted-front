@@ -50,7 +50,7 @@ const Publish = ({ token }) => {
           }
         }}
       >
-        <div className="title" style={{ fontSize: "23px" }}>
+        <div className="title" style={{ fontSize: "22px" }}>
           <h1>Vends ton article</h1>
         </div>
 

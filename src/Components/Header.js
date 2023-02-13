@@ -71,6 +71,7 @@ const Header = ({
             </div>
           </div>
         </div>
+        {/* ------------------------------------- */}
       </div>
 
       <div className="buttons">

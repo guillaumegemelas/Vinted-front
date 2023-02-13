@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = ({
   handleToken,
@@ -12,6 +12,7 @@ const Header = ({
   setPrice,
 }) => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <header>
@@ -32,46 +33,47 @@ const Header = ({
           />
         </div>
 
-        {/* test de hide les boutons de recherche par prix */}
-        <div className="buttonsFourth">
-          <div className="priceSelect">
-            <input
-              type="number"
-              value={searchMin}
-              placeholder="Min"
-              onChange={(event) => setSearchMin(event.target.value)}
-            />
-            <input
-              type="number"
-              value={searchMax}
-              placeholder="Max"
-              onChange={(event) => setSearchMax(event.target.value)}
-            />
-          </div>
+        {/* les boutons de recherche par prix se cachent si pas sur Home*/}
+        {location.pathname === "/" && (
+          <div className="buttonsFourth">
+            <div className="priceSelect">
+              <input
+                type="number"
+                value={searchMin}
+                placeholder="Min"
+                onChange={(event) => setSearchMin(event.target.value)}
+              />
+              <input
+                type="number"
+                value={searchMax}
+                placeholder="Max"
+                onChange={(event) => setSearchMax(event.target.value)}
+              />
+            </div>
 
-          <div className="sortOf">
-            <span style={{ fontSize: "14px", color: "lightgray" }}>
-              Trier par prix:
-            </span>
-            <div
-              className="asc"
-              onClick={() => {
-                setPrice("price-desc");
-              }}
-            >
-              <button style={{ fontSize: "15px" }}>-</button>
-            </div>
-            <div
-              className="asc"
-              onClick={() => {
-                setPrice("price-asc");
-              }}
-            >
-              <button style={{ fontSize: "15px" }}>+</button>
+            <div className="sortOf">
+              <span style={{ fontSize: "14px", color: "lightgray" }}>
+                Trier par prix:
+              </span>
+              <div
+                className="asc"
+                onClick={() => {
+                  setPrice("price-desc");
+                }}
+              >
+                <button style={{ fontSize: "15px" }}>-</button>
+              </div>
+              <div
+                className="asc"
+                onClick={() => {
+                  setPrice("price-asc");
+                }}
+              >
+                <button style={{ fontSize: "15px" }}>+</button>
+              </div>
             </div>
           </div>
-        </div>
-        {/* ------------------------------------- */}
+        )}
       </div>
 
       <div className="buttons">

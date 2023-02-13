@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
-const Publish = () => {
+const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
+  const [picture, setPicture] = useState();
   const [description, setDescription] = useState("");
   const [brand, setBrand] = useState("");
   const [size, setSize] = useState("");
@@ -19,6 +20,7 @@ const Publish = () => {
           try {
             const formData = new FormData();
             formData.append("title", title);
+            formData.append("picture", picture);
             formData.append("description", description);
             formData.append("brand", brand);
             formData.append("size", size);
@@ -27,8 +29,20 @@ const Publish = () => {
             formData.append("city", city);
             formData.append("price", price);
 
-            const response = await axios.post();
-          } catch (error) {}
+            const response = await axios.post(
+              "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+              formData,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                  "Content-Type": "multipart/form-data",
+                },
+              }
+            );
+            console.log(response);
+          } catch (error) {
+            console.log(error.message, "erreur 🖤 ");
+          }
         }}
       >
         <div className="title" style={{ fontSize: "23px" }}>
@@ -38,7 +52,10 @@ const Publish = () => {
         <div className="pictureAdd">
           <input
             type="file"
-            onChange={(event) => console.log(event.target.files[0])}
+            onChange={(event) => {
+              console.log(event.target.files[0]);
+              setPicture(event.target.files[0]);
+            }}
           />
         </div>
 
@@ -143,7 +160,7 @@ const Publish = () => {
               <input
                 value={city}
                 type="text"
-                placeholder="ex:  quelques trous pour l'aération"
+                placeholder="ex:  Lyon"
                 onChange={(event) => setCity(event.target.value)}
               />
             </div>

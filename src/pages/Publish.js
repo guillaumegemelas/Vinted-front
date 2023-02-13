@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
@@ -11,6 +12,8 @@ const Publish = ({ token }) => {
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
   const [price, setPrice] = useState("");
+
+  const navigate = useNavigate();
 
   return (
     <div className="container1">
@@ -40,6 +43,7 @@ const Publish = ({ token }) => {
               }
             );
             console.log(response);
+            navigate("/");
           } catch (error) {
             console.log(error.message, "erreur 🖤 ");
           }

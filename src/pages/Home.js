@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Home = ({ search, searchMin, searchMax, price }) => {
+const Home = ({ search, searchMin, searchMax, price, token }) => {
   const [offer, setOffer] = useState();
   const [isLoading, setIsLoading] = useState(true);
   // console.log(search);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,13 +34,21 @@ const Home = ({ search, searchMin, searchMax, price }) => {
         <p>En cours de chargement...</p>
       ) : (
         <div className="container">
-          <div>
+          <div className="hero">
             <div className="homeBox">
               <div className="homeP">
                 <p>Prêts à faire du tri dans vos placards?</p>
               </div>
               <div>
-                <button className="homeBut">Commencez à vendre</button>
+                <button
+                  className="homeBut"
+                  onClick={() => {
+                    //si token existe => page publish, sinon il faut passer par létape connection
+                    token ? navigate("/publish") : navigate("/login");
+                  }}
+                >
+                  Commencez à vendre
+                </button>
               </div>
             </div>
             <div className="heroImg">

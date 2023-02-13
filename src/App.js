@@ -60,6 +60,7 @@ function App() {
                 searchMin={searchMin}
                 searchMax={searchMax}
                 price={price}
+                token={token}
               />
             }
           />

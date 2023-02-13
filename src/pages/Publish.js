@@ -50,7 +50,7 @@ const Publish = ({
             // on inverse la valeur de visible à chaque submit------------------------------
             // setVisible(!visible);
             //--------------------------------------------------------------------------------------------
-            // alert("Votre annonce a été publiée");
+            alert("Votre annonce a été publiée");
             navigate("/");
           } catch (error) {
             console.log(error.message, "erreur 🖤 ");

@@ -44,7 +44,11 @@ const Home = ({ search, searchMin, searchMax, price, token }) => {
                   className="homeBut"
                   onClick={() => {
                     //si token existe => page publish, sinon il faut passer par létape connection
-                    token ? navigate("/publish") : navigate("/login");
+                    token
+                      ? navigate("/publish")
+                      : navigate("/login", {
+                          state: { logged: true },
+                        });
                   }}
                 >
                   Commencez à vendre

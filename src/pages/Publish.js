@@ -105,7 +105,7 @@ const Publish = ({ token }) => {
               <input
                 value={brand}
                 type="text"
-                placeholder="ex:  Adidas"
+                placeholder="ex:  Marc de café"
                 onChange={(event) => setBrand(event.target.value)}
               />
             </div>
@@ -165,7 +165,7 @@ const Publish = ({ token }) => {
               <input
                 value={city}
                 type="text"
-                placeholder="ex:  Lyon"
+                placeholder="ex:  Lyon / Tygre"
                 onChange={(event) => setCity(event.target.value)}
               />
             </div>

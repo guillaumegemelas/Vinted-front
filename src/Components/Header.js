@@ -31,6 +31,8 @@ const Header = ({
             onChange={(event) => setSearch(event.target.value)}
           />
         </div>
+
+        {/* test de hide les boutons de recherche par prix */}
         <div className="buttonsFourth">
           <div className="priceSelect">
             <input
@@ -46,7 +48,7 @@ const Header = ({
               onChange={(event) => setSearchMax(event.target.value)}
             />
           </div>
-          {/* modifs ajout switch */}
+
           <div className="sortOf">
             <span style={{ fontSize: "14px", color: "lightgray" }}>
               Trier par prix:
@@ -103,7 +105,7 @@ const Header = ({
               token
                 ? navigate("/publish")
                 : navigate("/login", {
-                    state: { logged: false },
+                    state: { logged: true },
                   });
             }}
           >

@@ -8,7 +8,12 @@ const Login = ({ handleToken }) => {
 
   //tests de redirection vers page publish après connection au lieu de la page home
   const { state } = useLocation();
-  const { logged } = state;
+
+  let logged;
+  if (state) {
+    logged = state.logged;
+  }
+
   //----------------------------------------
 
   const [email, setEmail] = useState("");
@@ -34,9 +39,8 @@ const Login = ({ handleToken }) => {
         handleToken(response.data.token);
 
         //tests nouvelle nav suite login venant de publish----------------------
-        {
-          state === true ? navigate("/") : navigate("/publish");
-        }
+
+        logged ? navigate("/publish") : navigate("/");
       }
       //   Cookies.set("tokenLog", response.data.account.username, { expires: 10 });
     } catch (error) {

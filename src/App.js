@@ -12,6 +12,9 @@ import Publish from "./pages/Publish";
 
 //import des composants
 import Header from "./Components/Header";
+//import du component Modal-----------------------------
+// import Modal from "./Components/Modal";
+//--------------------------------------------------------
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -20,6 +23,9 @@ function App() {
   const [searchMax, setSearchMax] = useState(1000);
   const [price, setPrice] = useState("");
 
+  //--------------------------------------------------------
+  // const [visible, setVisible] = useState(false);
+  //------------------------------------------------------------------------------------
   const handleToken = (token) => {
     if (token) {
       setToken(token);
@@ -51,7 +57,18 @@ function App() {
             element={<Signup handleToken={handleToken} />}
           />
           <Route path="/login" element={<Login handleToken={handleToken} />} />
-          <Route path="/publish" element={<Publish token={token} />} />
+          <Route
+            path="/publish"
+            element={
+              <Publish
+                token={token}
+                // ajout des props pour la Modal------------------------------------
+                // visible={visible}
+                // setVisible={setVisible}
+                //---------------------------------------------------------------------
+              />
+            }
+          />
           <Route
             path="/"
             element={
@@ -66,6 +83,9 @@ function App() {
           />
           <Route path="/offer/:id" element={<Offer />} />
         </Routes>
+        {/* ajout du composant Modal -------------------------------------*/}
+        {/* {visible && <Modal setVisible={setVisible} />} */}
+        {/* --------------------------------------------------------------- */}
       </Router>
     </div>
   );

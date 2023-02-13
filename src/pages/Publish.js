@@ -2,7 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Publish = ({ token }) => {
+const Publish = ({
+  token,
+  // visible,
+  // setVisible
+}) => {
   const [title, setTitle] = useState("");
   const [picture, setPicture] = useState();
   const [description, setDescription] = useState("");
@@ -43,7 +47,10 @@ const Publish = ({ token }) => {
               }
             );
             console.log(response);
-
+            // on inverse la valeur de visible à chaque submit------------------------------
+            // setVisible(!visible);
+            //--------------------------------------------------------------------------------------------
+            // alert("Votre annonce a été publiée");
             navigate("/");
           } catch (error) {
             console.log(error.message, "erreur 🖤 ");

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 
 //import des composants
 import Header from "./Components/Header";
@@ -17,7 +18,6 @@ function App() {
   const [search, setSearch] = useState("");
   const [searchMin, setSearchMin] = useState(0);
   const [searchMax, setSearchMax] = useState(1000);
-  const [switch1, setSwitch1] = useState(false);
   const [price, setPrice] = useState("");
 
   const handleToken = (token) => {
@@ -42,8 +42,6 @@ function App() {
           setSearchMin={setSearchMin}
           searchMax={searchMax}
           setSearchMax={setSearchMax}
-          switch1={switch1}
-          setSwitch1={setSwitch1}
           setPrice={setPrice}
           price={price}
         />
@@ -51,11 +49,9 @@ function App() {
           <Route
             path="/signup"
             element={<Signup handleToken={handleToken} />}
-          ></Route>
-          <Route
-            path="/login"
-            element={<Login handleToken={handleToken} />}
-          ></Route>
+          />
+          <Route path="/login" element={<Login handleToken={handleToken} />} />
+          <Route path="/publish" element={<Publish />} />
           <Route
             path="/"
             element={
@@ -66,8 +62,8 @@ function App() {
                 price={price}
               />
             }
-          ></Route>
-          <Route path="/offer/:id" element={<Offer />}></Route>
+          />
+          <Route path="/offer/:id" element={<Offer />} />
         </Routes>
       </Router>
     </div>

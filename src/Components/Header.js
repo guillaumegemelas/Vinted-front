@@ -10,8 +10,6 @@ const Header = ({
   setSearchMin,
   searchMax,
   setSearchMax,
-  switch1,
-  setSwitch1,
   setPrice,
 }) => {
   const navigate = useNavigate();
@@ -95,12 +93,19 @@ const Header = ({
             <button className="but2" onClick={() => navigate("/login")}>
               Se connecter
             </button>
-
-            <button className="but3" onClick={() => navigate("/")}>
-              Vends tes articles
-            </button>
           </div>
         )}
+        <div>
+          <button
+            className="but3"
+            onClick={() => {
+              //si token existe => page publish, sinon il faut passer par létape connection
+              token ? navigate("/publish") : navigate("/login");
+            }}
+          >
+            Vends tes articles
+          </button>
+        </div>
       </div>
     </header>
   );

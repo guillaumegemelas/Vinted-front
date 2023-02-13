@@ -43,6 +43,7 @@ const Publish = ({ token }) => {
               }
             );
             console.log(response);
+
             navigate("/");
           } catch (error) {
             console.log(error.message, "erreur 🖤 ");

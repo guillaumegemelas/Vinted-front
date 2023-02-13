@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-// import Switch from "react-switch";
 
 const Header = ({
   handleToken,
@@ -100,7 +99,12 @@ const Header = ({
             className="but3"
             onClick={() => {
               //si token existe => page publish, sinon il faut passer par létape connection
-              token ? navigate("/publish") : navigate("/login");
+              //et voi si on clic sur vendre, soir logué et on va à publish soit non loggué et on va à login
+              token
+                ? navigate("/publish")
+                : navigate("/login", {
+                    state: { logged: false },
+                  });
             }}
           >
             Vends tes articles

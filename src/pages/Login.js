@@ -1,13 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
 // import Cookies from "js-cookie";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Login = ({ handleToken, publish }) => {
+const Login = ({ handleToken }) => {
   //mes states dédiées au contenu de mes inputs
 
   //tests de redirection vers page publish après connection au lieu de la page home
-  const prevRoute = useLocation();
+  const { state } = useLocation();
+  const { logged } = state;
   //----------------------------------------
 
   const [email, setEmail] = useState("");
@@ -32,9 +33,10 @@ const Login = ({ handleToken, publish }) => {
       if (response.data.token) {
         handleToken(response.data.token);
 
-        //tests nouvelle nav suite login venant de publish
-        <Navigate to={publish} state={{ prevRoute }} replace />;
-        // navigate("/");
+        //tests nouvelle nav suite login venant de publish----------------------
+        {
+          state === true ? navigate("/") : navigate("/publish");
+        }
       }
       //   Cookies.set("tokenLog", response.data.account.username, { expires: 10 });
     } catch (error) {

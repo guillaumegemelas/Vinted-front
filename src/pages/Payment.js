@@ -11,7 +11,7 @@ const Payment = () => {
 
   //
   const stripePromise = loadStripe(
-    "pk_test_51MbMv9KWnFPSCRftX2iOsV3iYagReSPaf7v6CYoQeioi7Qeo2uCsaKa4AvsK35lloAaJcVxpGrYHhJZWhTIpgBaR00gw7Kn7Zb"
+    "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
   );
   //
 

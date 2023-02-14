@@ -32,12 +32,14 @@ const CheckoutForm = () => {
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         {
           stripeToken: stripeToken,
+          title: "title",
+          amount: "amount",
         }
       );
       console.log(response.data);
 
       // si réponse du backend, succeeded
-      if (response.data === "succeeded") {
+      if (response.data.status === "succeeded") {
         //on modifie les states isLoading et Completed
         setIsLoading(false);
         setCompleted(true);

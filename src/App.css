@@ -178,10 +178,6 @@ header img {
   margin-top: 100px;
   /* background-color: pink; */
 }
-.avatar p {
-  text-decoration: none;
-  color: rgb(147, 145, 145);
-}
 
 .product {
   display: flex;
@@ -210,7 +206,10 @@ header img {
   gap: 20px;
   align-items: center;
 }
-
+.avatar p {
+  text-decoration: none;
+  color: rgb(147, 145, 145);
+}
 .avatar img {
   width: 25px;
   height: 25px;

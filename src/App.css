@@ -399,7 +399,7 @@ a {
 /* page publish------------------------------------------------------------ */
 
 .container1 {
-  height: 100vh;
+  height: 1000vh;
   width: 100vw;
   background-color: #f5f6f7;
 }
@@ -477,7 +477,15 @@ a {
   border: none;
   height: auto;
   width: 90%;
-
+  border-bottom: 1px rgb(223, 221, 221) solid;
+}
+.formInput textarea {
+  /* background-color: #c2175b; */
+  width: 90%;
+  height: 80%;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
   border-bottom: 1px rgb(223, 221, 221) solid;
 }
 

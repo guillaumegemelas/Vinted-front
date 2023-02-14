@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 const Publish = ({
   token,
@@ -19,44 +19,45 @@ const Publish = ({
 
   const navigate = useNavigate();
 
-  return (
-    <div className="container1">
-      <form
-        onSubmit={async (event) => {
-          event.preventDefault();
-          try {
-            const formData = new FormData();
-            formData.append("title", title);
-            formData.append("picture", picture);
-            formData.append("description", description);
-            formData.append("brand", brand);
-            formData.append("size", size);
-            formData.append("color", color);
-            formData.append("condition", condition);
-            formData.append("city", city);
-            formData.append("price", price);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("picture", picture);
+      formData.append("description", description);
+      formData.append("brand", brand);
+      formData.append("size", size);
+      formData.append("color", color);
+      formData.append("condition", condition);
+      formData.append("city", city);
+      formData.append("price", price);
 
-            const response = await axios.post(
-              "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-              formData,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                  "Content-Type": "multipart/form-data",
-                },
-              }
-            );
-            console.log(response);
-            // on inverse la valeur de visible à chaque submit------------------------------
-            // setVisible(!visible);
-            //--------------------------------------------------------------------------------------------
-            alert("Votre annonce a été publiée");
-            navigate("/");
-          } catch (error) {
-            console.log(error.message, "erreur 🖤 ");
-          }
-        }}
-      >
+      const response = await axios.post(
+        // "https://site--backend-vinted--zqfvjrr4byql.code.run/offer/publish",
+        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response);
+      // on inverse la valeur de visible à chaque submit------------------------------
+      // setVisible(!visible);
+      //--------------------------------------------------------------------------------------------
+      alert("Votre annonce a été publiée");
+      navigate("/");
+    } catch (error) {
+      console.log(error.message, "erreur 🖤 ");
+    }
+  };
+
+  return token ? (
+    <div className="container1">
+      <form onSubmit={handleSubmit}>
         <div className="title" style={{ fontSize: "22px" }}>
           <h1>Vends ton article</h1>
         </div>
@@ -69,6 +70,7 @@ const Publish = ({
               setPicture(event.target.files[0]);
             }}
           />
+          {/* {picture && <img src={URL.createObjectURL(picture)} alt="picture" />} */}
         </div>
 
         <div className="secondBox">
@@ -93,9 +95,10 @@ const Publish = ({
             </div>
 
             <div className="formInput">
-              <input
+              {/* //àmettre en forme à la plce du input */}
+              <textarea
                 value={description}
-                type="text"
+                type="textarea"
                 placeholder="ex:  c'est moche mais j'aime bien"
                 onChange={(event) => setDescription(event.target.value)}
               />
@@ -214,6 +217,8 @@ const Publish = ({
         </div>
       </form>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

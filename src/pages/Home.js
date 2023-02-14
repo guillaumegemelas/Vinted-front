@@ -12,6 +12,7 @@ const Home = ({ search, searchMin, searchMax, price, token }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
+          // `https://site--backend-vinted--zqfvjrr4byql.code.run/offers?title=${search}&priceMin=${searchMin}&priceMax=${searchMax}&sort=${price}`
           `https://lereacteur-vinted-api.herokuapp.com/offers?title=${search}&priceMin=${searchMin}&priceMax=${searchMax}&sort=${price}`
         );
         setOffer(response.data);
@@ -64,7 +65,7 @@ const Home = ({ search, searchMin, searchMax, price, token }) => {
           </div>
 
           <div className="listOfOffers">
-            {/* Mettre filteredOffers à la place si requete depuis vinted back Northflank */}
+            {/* Mettre filteredOffers à la place de offers si requete depuis vinted back Northflank */}
             {offer.offers.map((elem, index) => {
               return (
                 //lien vers la page Offer avec l'offre dont l'id est indiquée

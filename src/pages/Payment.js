@@ -49,14 +49,14 @@ const Payment = () => {
         </div>
         <div className="descrPaym">
           <p>
-            il ne vous reste plus qu'une seule étape pour vous offrir{" "}
+            Il ne vous reste plus qu'une seule étape pour vous offrir{" "}
             <span>{title}</span>. Vous allez payer <span>{totalPrice}€ </span>
             (frais de protection et frais de port inclus)
           </p>
         </div>
         <div className="payBut">
           {/* Elements va devoir englober toute la logique de paiement */}
-          <Elements stripe={stripePromise}>
+          <Elements className="checkForm" stripe={stripePromise}>
             <CheckoutForm amount={totalPrice} title={title} />
           </Elements>
         </div>

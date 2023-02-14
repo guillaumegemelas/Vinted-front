@@ -4,14 +4,14 @@
   /* font-size: 25px; */
   font-family: "Montserrat", sans-serif;
 }
-/* Header--------------------------------------------- */
+/* Header-------------------------------------------------------------------------- */
 
 header {
   display: flex;
   /* background-color: pink; */
   justify-content: space-between;
   align-items: center;
-  height: 130px;
+  height: 120px;
   width: 90vw;
   margin: 0 auto;
 }
@@ -42,6 +42,14 @@ header img {
   color: rgb(181, 179, 179);
   font-size: 15px;
 }
+
+.fourthButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  width: 400px;
+}
+
 .priceSelect {
   display: flex;
   justify-content: space-around;
@@ -116,7 +124,7 @@ header img {
   color: #fff;
 }
 
-/* Home -----------------------------------------*/
+/* Page Home ----------------------------------------------------------------------*/
 
 .hero {
   display: flex;
@@ -219,7 +227,7 @@ header img {
 .above {
   margin-top: 10px;
 }
-/* page offer------------------------------------------------------------ */
+/* page Offer------------------------------------------------------------------------- */
 
 .response {
   background-color: rgb(226, 223, 223);
@@ -312,7 +320,7 @@ header img {
   font-family: "Montserrat", sans-serif;
 }
 
-/* page login------------------------------------------------------------ */
+/* page Login-------------------------------------------------------------------- */
 
 .globLogin {
   display: flex;
@@ -407,7 +415,7 @@ a {
   text-decoration: none;
 }
 
-/* page publish------------------------------------------------------------ */
+/* page publish---------------------------------------------------------------------- */
 
 .container1 {
   height: 1000vh;
@@ -446,7 +454,6 @@ a {
   margin-bottom: 15px;
 }
 .layout {
-  /* background-color: yellow; */
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -572,7 +579,7 @@ a {
 .paymentBox {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 600px;
   height: 700px;
   background-color: #fff;
@@ -598,7 +605,9 @@ a {
   margin: 0 auto;
   margin-top: 80px;
   text-align: justify;
+  line-height: 20px;
   margin-bottom: 30px;
+  padding-bottom: 15px;
   border-bottom: rgb(222, 221, 221) 1px solid;
 }
 .descrPaym span {
@@ -613,6 +622,7 @@ a {
   height: 150px;
   /* background-color: pink; */
 }
+
 .cardElement {
   display: flex;
   width: 100%;
@@ -621,6 +631,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
   /* background-color: blue; */
 }

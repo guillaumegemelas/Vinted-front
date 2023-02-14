@@ -35,7 +35,7 @@ const Header = ({
 
         {/* les boutons de recherche par prix se cachent si pas sur Home*/}
         {location.pathname === "/" && (
-          <div className="buttonsFourth">
+          <div className="fourthButtons">
             <div className="priceSelect">
               <input
                 type="number"

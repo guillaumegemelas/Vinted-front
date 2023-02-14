@@ -621,7 +621,16 @@ a {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 10px;
+  text-align: center;
   /* background-color: blue; */
+}
+.confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfdff7;
+  border-radius: 5px;
+  height: 42px;
 }
 
 .cardElement button {

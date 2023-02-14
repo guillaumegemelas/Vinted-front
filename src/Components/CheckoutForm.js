@@ -1,5 +1,6 @@
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const CheckoutForm = ({ title, amount }) => {
@@ -12,6 +13,8 @@ const CheckoutForm = ({ title, amount }) => {
 
   //permettra de récupérer les donnéesbancaires de l'utilisateur
   const elements = useElements();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -55,7 +58,14 @@ const CheckoutForm = ({ title, amount }) => {
     <form className="cardElement" onSubmit={handleSubmit}>
       <CardElement />
       {completed ? (
-        <p>Paiement effectué</p>
+        <div
+          className="confirmation"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <p>Paiement effectué</p>
+        </div>
       ) : (
         <button disabled={isLoading} type="submit">
           Payer

@@ -2,7 +2,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ title, amount }) => {
   const [isLoading, setIsLoading] = useState(false);
   //state qui sert à savoir si le paiement a bien été effectué
   const [completed, setCompleted] = useState(false);
@@ -22,7 +22,7 @@ const CheckoutForm = () => {
       const cardElement = elements.getElement(CardElement);
 
       const stripeResponse = await stripe.createToken(cardElement, {
-        name: "id de l'acheteur",
+        name: "user_id",
       });
 
       const stripeToken = stripeResponse.token.id;
@@ -32,8 +32,8 @@ const CheckoutForm = () => {
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         {
           stripeToken: stripeToken,
-          title: "title",
-          amount: "amount",
+          title: title,
+          amount: amount,
         }
       );
       console.log(response.data);

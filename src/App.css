@@ -320,7 +320,7 @@ header img {
   font-family: "Montserrat", sans-serif;
 }
 
-/* page Login-------------------------------------------------------------------- */
+/* page Login / Signup-------------------------------------------------------------------- */
 
 .globLogin {
   display: flex;
@@ -394,8 +394,10 @@ header img {
 
 .policy {
   margin-left: 10px;
+  line-height: 17px;
   font-size: 14px;
   color: rgb(110, 107, 107);
+  text-align: justify;
 }
 
 .inscripButton {

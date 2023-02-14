@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import axios from "axios";
 
-const Offer = () => {
+const Offer = ({ token }) => {
   //je récupère le params de l'url avec useParams:
   const { id } = useParams();
   //   console.log(id);
@@ -67,7 +67,28 @@ const Offer = () => {
                   <p>{offer.product_name}</p>
                 </div>
                 <div>
-                  <button className="buy">Acheter</button>
+                  {/* lien vers la page Payment */}
+                  {token ? (
+                    <Link
+                      to="/payment"
+                      state={{
+                        title: offer.product_name,
+                        price: offer.product_price,
+                      }}
+                    >
+                      <button className="buy">Acheter</button>
+                    </Link>
+                  ) : (
+                    // retour à la page login si pas connecté
+                    <Link to="/login">
+                      <button
+                        className="buy"
+                        style={{ backgroundColor: "lightgray", border: "none" }}
+                      >
+                        Acheter
+                      </button>
+                    </Link>
+                  )}
                 </div>
               </div>
               <div className="icon">

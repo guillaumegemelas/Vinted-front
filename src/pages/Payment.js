@@ -57,7 +57,7 @@ const Payment = () => {
         <div className="payBut">
           {/* Elements va devoir englober toute la logique de paiement */}
           <Elements stripe={stripePromise}>
-            <CheckoutForm amount={price} title={title} />
+            <CheckoutForm amount={totalPrice} title={title} />
           </Elements>
         </div>
       </div>

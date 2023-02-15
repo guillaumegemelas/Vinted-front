@@ -1,19 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 //import Stripe
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "../Components/CheckoutForm";
 
-const Payment = () => {
+const Payment = ({ token }) => {
   const location = useLocation();
   const { title, price } = location.state;
 
-  //
   const stripePromise = loadStripe(
     "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
   );
-  //
 
   let sendPrice = ((20 / 100) * price).toFixed(2);
   let protectPrice = ((10 / 100) * price).toFixed(2);
@@ -23,7 +21,7 @@ const Payment = () => {
     Number(protectPrice)
   ).toFixed(2);
 
-  return (
+  return token ? (
     <div className="container12">
       <div className="paymentBox">
         <h1>Résumé de la commande</h1>
@@ -62,6 +60,8 @@ const Payment = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

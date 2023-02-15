@@ -84,7 +84,7 @@ function App() {
             }
           />
           <Route path="/offer/:id" element={<Offer token={token} />} />
-          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment" element={<Payment token={token} />} />
         </Routes>
         {/* ajout du composant Modal -------------------------------------*/}
         {/* {visible && <Modal setVisible={setVisible} />} */}

@@ -1082,4 +1082,61 @@ a {
     height: 150px;
     /* background-color: pink; */
   }
+
+  /*loginsignup----------------------*/
+  .souLogin {
+    height: 700px;
+    width: 300px;
+    /* background-color: pink; */
+    margin-bottom: 220px;
+  }
+  .souLogin1 {
+    height: 390px;
+    width: 300px;
+    /* background-color: pink; */
+    margin-bottom: 400px;
+  }
+
+  .souLogin h1,
+  .souLogin1 h1 {
+    font-size: 20px;
+  }
+
+  .check1 input {
+    height: 25px;
+  }
+
+  .checkbox {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: flex-start;
+    margin-left: 20px;
+    font-size: 14px;
+    color: rgb(110, 107, 107);
+    gap: 50px;
+  }
+
+  .policy {
+    margin-left: 10px;
+    line-height: 17px;
+    font-size: 12px;
+    color: rgb(110, 107, 107);
+    text-align: justify;
+  }
+
+  .inscripButton {
+    height: 42px;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    background-color: #2db0ba;
+    border: 1px #2db0ba solid;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .z {
+    font-size: 14px;
+  }
 }

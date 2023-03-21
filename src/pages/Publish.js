@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Navigate } from "react-router-dom";
 
+// import toast, { Toaster } from "react-hot-toast";
+
 const Publish = ({
   token,
   // visible,
@@ -57,8 +59,11 @@ const Publish = ({
 
   return token ? (
     <div className="container1">
+      {/* <div>
+        <Toaster position="top-center" reverseOrder={false} />
+      </div> */}
       <form onSubmit={handleSubmit}>
-        <div className="title" style={{ fontSize: "22px" }}>
+        <div className="title">
           <h1>Vends ton article</h1>
         </div>
 

@@ -1,5 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Header = ({
   handleToken,
   token,
@@ -75,46 +78,97 @@ const Header = ({
           </div>
         )}
       </div>
-
-      <div className="buttons">
-        {/* il faut que ce bouton soit visible que sur la page home */}
-        {token ? (
-          <button
-            className="but0"
-            onClick={() => {
-              handleToken(null);
-              navigate("/login");
-            }}
-          >
-            Se déconnecter
-          </button>
-        ) : (
-          <div>
-            <button className="but1" onClick={() => navigate("/signup")}>
-              S'inscrire
+      {/* cette div apparait en dessus de 1123px+++++++++++++++++++++++++ */}
+      <div className="upper1150">
+        <div className="buttons">
+          {/* il faut que ce bouton soit visible que sur la page home */}
+          {token ? (
+            <button
+              className="but0"
+              onClick={() => {
+                handleToken(null);
+                navigate("/login");
+              }}
+            >
+              Se déconnecter
             </button>
+          ) : (
+            <div className="connectBut">
+              <button className="but1" onClick={() => navigate("/signup")}>
+                S'inscrire
+              </button>
 
-            <button className="but2" onClick={() => navigate("/login")}>
-              Se connecter
+              <button className="but2" onClick={() => navigate("/login")}>
+                Se connecter
+              </button>
+            </div>
+          )}
+          <div>
+            <button
+              className="but3"
+              onClick={() => {
+                //si token existe => page publish, sinon il faut passer par létape connection
+                //et voi si on clic sur vendre, soir logué et on va à publish soit non loggué et on va à login
+                token
+                  ? navigate("/publish")
+                  : navigate("/login", {
+                      state: { logged: true },
+                    });
+              }}
+            >
+              Vends tes articles
             </button>
           </div>
-        )}
-        <div>
-          <button
-            className="but3"
-            onClick={() => {
-              //si token existe => page publish, sinon il faut passer par létape connection
-              //et voi si on clic sur vendre, soir logué et on va à publish soit non loggué et on va à login
-              token
-                ? navigate("/publish")
-                : navigate("/login", {
-                    state: { logged: true },
-                  });
-            }}
-          >
-            Vends tes articles
-          </button>
         </div>
+      </div>
+      {/* cette div avec hambuerger icon apparait en dessous de 1123px+++++++++++++++++++++++++ */}
+      <div className="lower1150">
+        <div>
+          <label htmlFor="toggle">
+            <FontAwesomeIcon icon="bars" />
+          </label>
+        </div>
+        <div className="buttons">
+          {/* il faut que ce bouton soit visible que sur la page home */}
+          {token ? (
+            <button
+              className="but0"
+              onClick={() => {
+                handleToken(null);
+                navigate("/login");
+              }}
+            >
+              Se déconnecter
+            </button>
+          ) : (
+            <div className="connectBut">
+              <button className="but1" onClick={() => navigate("/signup")}>
+                S'inscrire
+              </button>
+
+              <button className="but2" onClick={() => navigate("/login")}>
+                Se connecter
+              </button>
+            </div>
+          )}
+          <div>
+            <button
+              className="but3"
+              onClick={() => {
+                //si token existe => page publish, sinon il faut passer par létape connection
+                //et voi si on clic sur vendre, soir logué et on va à publish soit non loggué et on va à login
+                token
+                  ? navigate("/publish")
+                  : navigate("/login", {
+                      state: { logged: true },
+                    });
+              }}
+            >
+              Vends tes articles
+            </button>
+          </div>
+        </div>{" "}
+        {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
       </div>
     </header>
   );

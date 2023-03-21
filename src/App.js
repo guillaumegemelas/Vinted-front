@@ -14,6 +14,39 @@ import Payment from "./pages/Payment";
 //import des composants
 import Header from "./Components/Header";
 
+//import des font d'icones vectorielles
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faMessage,
+  faInbox,
+  faHouse,
+  faTrashCan,
+  faRightToBracket,
+  faDoorOpen,
+  faFaceGrinWide,
+  faCommentDots,
+  faThumbsUp,
+  faThumbsDown,
+  faUserPlus,
+  faUser,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(
+  faMessage,
+  faInbox,
+  faHouse,
+  faTrashCan,
+  faRightToBracket,
+  faDoorOpen,
+  faFaceGrinWide,
+  faCommentDots,
+  faThumbsUp,
+  faThumbsDown,
+  faUserPlus,
+  faUser,
+  faBars
+);
+
 //import du component Modal-----------------------------
 // import Modal from "./Components/Modal";
 //--------------------------------------------------------

@@ -439,7 +439,7 @@ a {
 /* page publish---------------------------------------------------------------------- */
 
 .container1 {
-  height: 1000vh;
+  height: 100%;
   width: 100vw;
   background-color: #f5f6f7;
 }
@@ -594,7 +594,7 @@ a {
 .container12 {
   display: flex;
   justify-content: center;
-  height: 1000vh;
+  height: 100%;
   width: 100vw;
   background-color: #ebedef;
 }
@@ -603,6 +603,7 @@ a {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  margin-bottom: 50px;
   max-width: 600px;
   height: 700px;
   background-color: #fff;

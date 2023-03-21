@@ -1,7 +1,7 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 //import icones
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({
   handleToken,
@@ -20,10 +20,12 @@ const Header = ({
   return (
     <header>
       <div className="logo">
-        <img
-          src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            src="https://lereacteur-vinted.netlify.app/static/media/logo.10b0caad793dd0a8ea72.png"
+            alt=""
+          />
+        </Link>
       </div>
       <div className="trioButtons">
         <div className="search">
@@ -102,7 +104,7 @@ const Header = ({
             </button>
           </div>
         )}
-        <div>
+        <div className="but3div">
           <button
             className="but3"
             onClick={() => {

@@ -57,10 +57,10 @@ const Home = ({ search, searchMin, searchMax, price, token }) => {
               </div>
             </div>
             <div className="heroImg">
-              <img
+              {/* <img
                 src="https://lereacteur-vinted.netlify.app/static/media/tear.884480420945b3afd77b44a6c5f98567.svg"
                 alt=""
-              />
+              /> */}
             </div>
           </div>
 

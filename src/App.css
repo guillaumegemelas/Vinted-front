@@ -26,7 +26,7 @@ header img {
   justify-content: space-between;
   /* background-color: yellow; */
   height: auto;
-  max-width: 38%;
+  width: 38%;
   margin-right: 5px;
 }
 .connectBut {
@@ -713,7 +713,7 @@ a {
 @media (max-width: 1150px) {
   header {
     display: flex;
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     justify-content: space-between;
     align-items: center;
     height: 120px;
@@ -727,29 +727,110 @@ a {
     cursor: pointer;
   }
 
-  /* .upper1150 {
-    display: none;
-  }
-  .lower1150 {
-    display: flex;
-  } */
+  /*partie offer*/
 
-  /* .buttons {
+  .response {
+    background-color: rgb(226, 223, 223);
+    height: 100%;
+  }
+  .offerGlobal {
     display: flex;
     flex-direction: column;
-  } */
+    max-width: 80%;
+    margin: 0 auto;
+
+    align-items: center;
+    /* background-color: pink; */
+  }
+
+  .offerPicture img {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+    margin-top: 40px;
+    box-shadow: 1px 1px 15px rgb(190, 188, 188);
+  }
+
+  .offerDescription {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    width: 100%;
+    height: 650px;
+    margin-top: 40px;
+    box-shadow: 1px 1px 15px rgb(190, 188, 188);
+    margin-bottom: 100px;
+  }
+  .price {
+    display: flex;
+    /* background-color: pink; */
+    font-size: 23px;
+    margin-left: 50px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  .offerDescription p {
+    display: flex;
+    padding: 30px 0 0 30px;
+    height: 15px;
+  }
+  .text {
+    display: flex;
+    padding: 0 0 0 35px;
+    /* background-color: pink; */
+  }
+
+  .key {
+    color: rgb(186, 185, 185);
+    width: 35%;
+    font-size: 12px;
+  }
+  .key1 {
+    font-size: 12px;
+  }
+
+  .nameAndBuy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    justify-content: space-between;
+    /* background-color: pink; */
+  }
+  .buy {
+    height: 42px;
+    width: 300px;
+    color: #fff;
+    font-size: 15px;
+    background-color: #2db0ba;
+    border: 1px #2db0ba solid;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+  }
 }
 /*-----------------------------------------------------------------------------------------*/
 @media (max-width: 630px) {
   header {
     display: flex;
-    background-color: lightgreen;
-    justify-content: space-between;
+    /* background-color: lightgreen; */
     align-items: center;
     height: 120px;
     width: 90vw;
     margin: 0 auto;
   }
+  .logo {
+    width: 20%;
+    margin-left: 5px;
+  }
+  .trioButtons {
+    width: 60%;
+  }
+
   header img {
     width: 80px;
   }
@@ -768,5 +849,145 @@ a {
     color: rgb(181, 179, 179);
     font-size: 10px;
     width: 73px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    /* background-color: blue; */
+  }
+  .connectBut {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .but0 {
+    height: 30px;
+    width: 80px;
+    background-color: #c2175b;
+    font-size: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    margin-left: 55px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .but1,
+  .but2 {
+    height: 30px;
+    width: 80px;
+    color: #2db0ba;
+    font-size: 10px;
+    background-color: #fff;
+    border: 1px #2db0ba solid;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .but3div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
+    /* background-color: #fff; */
+  }
+  .but3 {
+    height: 30px;
+    width: 80px;
+    color: #fff;
+    font-size: 10px;
+    background-color: #2db0ba;
+    border: 1px #2db0ba solid;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .fourthButtons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+    background-color: #fff;
+    width: 60%;
+  }
+  .priceSelect {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  .search {
+    margin-left: 20px;
+  }
+  .search input {
+    width: 75%;
+  }
+  .priceSelect input {
+    font-size: 10px;
+    width: 50px;
+  }
+  .sortOf span {
+    display: none;
+  }
+  .sortOf {
+    display: flex;
+    height: 30px;
+    width: 200px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    /* background-color: pink; */
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    background-image: url(https://lereacteur-vinted.netlify.app/static/media/hero.2c66d85a1335550c4518.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 400px;
+  }
+
+  .homeBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    height: 200px;
+    width: 300px;
+    margin-left: 5%;
+    line-height: 45px;
+    margin-top: 90px;
+  }
+  .homeP {
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .homeBut {
+    height: 45px;
+    width: 200px;
+    color: #fff;
+    font-size: 17px;
+    background-color: #2db0ba;
+    border: 1px #2db0ba solid;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+  }
+
+  .heroImg img {
+    margin-top: 100px;
+    height: auto;
+    width: 100vw;
+    position: absolute;
   }
 }

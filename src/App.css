@@ -8,7 +8,7 @@
 
 header {
   display: flex;
-  background-color: pink;
+  /* background-color: pink; */
   justify-content: space-between;
   align-items: center;
   height: 120px;
@@ -24,15 +24,15 @@ header img {
 .buttons {
   display: flex;
   justify-content: space-between;
-  background-color: yellow;
+  /* background-color: yellow; */
   height: auto;
-  width: 38%;
+  max-width: 38%;
   margin-right: 5px;
 }
 .connectBut {
   display: flex;
   flex-direction: row;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .search input {
   width: 25vw;
@@ -727,19 +727,19 @@ a {
     cursor: pointer;
   }
 
-  .upper1150 {
+  /* .upper1150 {
     display: none;
   }
   .lower1150 {
     display: flex;
-  }
+  } */
 
-  .buttons {
+  /* .buttons {
     display: flex;
     flex-direction: column;
-  }
+  } */
 }
-
+/*-----------------------------------------------------------------------------------------*/
 @media (max-width: 630px) {
   header {
     display: flex;
@@ -769,49 +769,4 @@ a {
     font-size: 10px;
     width: 73px;
   }
-
-  /* .connectBut {
-    display: flex;
-    flex-direction: row;
-    background-color: blue;
-  }
-  
-
-  .but0 {
-    height: 37px;
-    width: 140px;
-    background-color: #c2175b;
-    font-size: 15px;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    margin-right: 30px;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  .but1,
-  .but2 {
-    height: 37px;
-    width: 140px;
-    color: #2db0ba;
-    font-size: 15px;
-    background-color: #fff;
-    border: 1px #2db0ba solid;
-    border-radius: 5px;
-    gap: 50px;
-    margin-left: 30px;
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  .but3 {
-    height: 37px;
-    width: 150px;
-    color: #fff;
-    font-size: 15px;
-    background-color: #2db0ba;
-    border: 1px #2db0ba solid;
-    border-radius: 5px;
-    margin-left: 60px;
-    font-family: "Montserrat", sans-serif;
-  } */
 }

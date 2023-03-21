@@ -82,7 +82,7 @@ const Home = ({ search, searchMin, searchMax, price, token }) => {
                       )}
                       <p>{elem.owner.account.username}</p>
                     </div>
-                    <div>
+                    <div className="articleimg">
                       <img src={elem.product_image.secure_url} alt="" />
                     </div>
                     <div className="above">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,6 +14,11 @@ const Signup = ({ handleToken }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
+
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSignup = async () => {
     setErrorMessage("");

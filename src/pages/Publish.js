@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Navigate } from "react-router-dom";
 
@@ -20,6 +20,11 @@ const Publish = ({
   const [price, setPrice] = useState("");
 
   const navigate = useNavigate();
+
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

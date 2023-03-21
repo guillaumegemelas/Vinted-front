@@ -14,6 +14,11 @@ const Offer = ({ token }) => {
   const [offer, setOffer] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {

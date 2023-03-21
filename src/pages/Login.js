@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 // import Cookies from "js-cookie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -22,6 +22,11 @@ const Login = ({ handleToken }) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
+
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleLogin = async () => {
     try {

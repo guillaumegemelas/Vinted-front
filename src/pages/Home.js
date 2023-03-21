@@ -8,6 +8,12 @@ const Home = ({ search, searchMin, searchMax, price, token }) => {
   const [isLoading, setIsLoading] = useState(true);
   // console.log(search);
   const navigate = useNavigate();
+
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -34,7 +34,7 @@ The first step to buy is to clic one a picture on the main page. Once you've don
 
 <img width="1678" alt="acheter" src="https://user-images.githubusercontent.com/121306549/228978809-33abf95b-494a-45d7-b394-d5cf0554b603.png">
 
-the second step after the validation (button acheter), you are redirected to the finakl buy step where you enter your credit card number
+the second step after the validation (button acheter), you are redirected to the final buy step where you enter your credit card number
 
 <img width="1699" alt="finalbuy" src="https://user-images.githubusercontent.com/121306549/228979375-c366c361-c17d-4fe6-92f5-41f4bb27eb9d.png">
 

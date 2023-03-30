@@ -14,7 +14,7 @@ In the project directory, you can run:
 
 ### Deployment
 
-This project (Front-End) is deployed with Netlify. You can find it: [https://vinted-gg.netlify.app/payment] (https://vinted-gg.netlify.app/payment)
+This project (Front-End) is deployed with Netlify. You can find it: [https://vinted-gg.netlify.app] (https://vinted-gg.netlify.app)
 
 ### Hos does it works
 

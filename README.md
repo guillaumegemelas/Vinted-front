@@ -31,6 +31,7 @@ Once connected, you have access to the sales and purchase area
 <img width="1651" alt="vendre" src="https://user-images.githubusercontent.com/121306549/228978805-58ab4d6e-0d0e-46f8-a904-fd47ec1d77ac.png">
 
 The first step to buy is to clic one a picture on the main page. Once you've done it, you will be redirected to the ad page where you can find more details.
+
 <img width="1678" alt="acheter" src="https://user-images.githubusercontent.com/121306549/228978809-33abf95b-494a-45d7-b394-d5cf0554b603.png">
 
 the second step after the validation (button acheter), you are redirected to the finakl buy step where you enter your credit card number

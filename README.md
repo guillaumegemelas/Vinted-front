@@ -22,7 +22,9 @@ You arrive directly on the home page and you are not yet logged
 
 <img width="1704" alt="mainpage" src="https://user-images.githubusercontent.com/121306549/228978330-f7647d61-3f27-4e4d-88fb-efc645b29773.png">
 
-if you are not logged in, you can still view published ads but if you want to buy one or publish one, you have to log in. if you have no account yet, you can sign up. you have to click on `S'inscrire` if you have no account or on `Login` if you have one
+If you are not logged in, you can still view published ads but if you want to buy one or publish one, you have to log in.
+
+If you have no account yet, you can sign up. you have to click on `S'inscrire` if you have no account or on `Login` if you have one
 
 <img width="1696" alt="connexion" src="https://user-images.githubusercontent.com/121306549/228978657-80db2fb2-6fe1-441d-8def-c9a042a28f3f.png">
 
